@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+           margin:0;
+           padding:0;
+           box-sizing:border-box;
+        }
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            width: 400px;
+            height: 400px;
+            cursor: pointer;
+            position: relative;
+
+        }
+        .front{
+            width: 100%;
+            height:100%;
+            transform: perspective(1000px) rotateY(0deg);
+            backface-visibility: hidden;
+            box-shadow: rgb( 100 100 112 0.3) 0 8px 25px 0 ;
+            transition: 0.7s;
+        }
+        .front img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .back{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(228, 239, 248); 
+        box-shadow: rgb( 100 100 112 0.3)  0 8px 25px 0;
+        transform: perspective(1000px) rotateY(-180deg);
+        backface-visibility: hidden;
+        transition: 0.7s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-around; 
+        padding:25px; 
+        }
+        .card:hover .back{
+            transform:  perspective(1000px) rotateY(0deg);
+        } 
+        .card:hover .front{
+            transform: perspective(1000px) rotateY(180deg);
+        }
+
+        .back button{
+            padding:5px;
+            background-color: antiquewhite;
+            width:100px;
+            border-radius: 80px;
+        }
+        .back p{
+            line-height: 25px;
+          
+        }
+     </style>
+     </head>
+     <body>
+       <div class="card">
+        <div class="front">
+         <img src="./Ai.png">
+        </div>
+        <div class="back">
+            <h1>"The best AI code generators"</h1>
+                <p>
+                1. OpenAI Codex
+                2. Copilot
+                3. ChatGPT 
+                4. AlphaCode
+                5. Tabnine
+                6. CodeT5
+                7. Polycoder
+                8. Deepcode
+                9. WPCode
+                10. AskCodi
+
+            </p>
+        <button>Click</button>
+        </div>
+       </div>
+     </body>  
+      </html>
